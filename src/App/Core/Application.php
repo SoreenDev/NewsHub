@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Core;
 
 class Application extends \Illuminate\Foundation\Application
 {

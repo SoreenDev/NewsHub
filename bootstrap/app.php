@@ -1,6 +1,6 @@
 <?php
 
-use App\Application;
+use App\Core\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
