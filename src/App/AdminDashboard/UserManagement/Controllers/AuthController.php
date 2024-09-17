@@ -3,19 +3,25 @@
 namespace App\AdminDashboard\UserManagement\Controllers;
 
 use App\AdminDashboard\UserManagement\Request\Auth\loginAuthRequest;
-use Illuminate\Contracts\View\Factory;
+use App\Core\Controllers\Controller;
 use Illuminate\Contracts\View\View;
-use Illuminate\Foundation\Application;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Auth;
-use Support\Controllers\Controller;
 
 class AuthController extends Controller
 {
     /**
      * @return View
      */
-    public function index(): View
+    public function registerPage(): View
+    {
+        return view('AdminDashboard.Auth.register');
+    }
+
+    public function register()
+    {
+        //..
+    }
+
+    public function loginPage(): View
     {
         return view('AdminDashboard.Auth.login');
     }
