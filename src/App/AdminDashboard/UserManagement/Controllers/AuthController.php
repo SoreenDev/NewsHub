@@ -5,6 +5,7 @@ namespace App\AdminDashboard\UserManagement\Controllers;
 use App\AdminDashboard\UserManagement\Request\Auth\loginAuthRequest;
 use App\Core\Controllers\Controller;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -26,15 +27,13 @@ class AuthController extends Controller
         return view('AdminDashboard.Auth.login');
     }
 
-    /**
-     * @return
-     */
-    public function login(loginAuthRequest $request)
+    public function login(loginAuthRequest $request )
     {
-//        if (! Auth::attempt([$request->validated()]))
-//            return redirect()->back()->with('error','invalid Credentials');
+        if (! Auth::attempt([$request->validated()]))
+            return 'error';
+//        $user = Auth::user();
 
-        $user=\Domain\AdminDashboard\UserManagement\Models\User::first();
-        dd($user->roles());
+        $user->roles();
+
     }
 }
