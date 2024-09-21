@@ -24,21 +24,23 @@ class UserSeeder extends Seeder
             ]);
 
             if ($i % 20 === 0) {
-                $role = Role::findByName('leader');
+                $role = Role::findByName('Journalist_manager');
                 $user->assignRole($role);
+                continue;
             }
 
             if ($i === 50) {
-                $role = Role::findByName('management');
+                $role = Role::findByName('Admin_manager');
                 User::create([
                     'name' => 'SoreenDev',
                     'path_profile' => asset('storage/images.png'),
                     'email' => 'soreendev@gmail.com',
                     'password' => Hash::make('12345678')
                 ])->assignRole($role);
+                continue ;
             }
 
-            $role = Role::findByName('member');
+            $role = Role::findByName('Member');
             $user->assignRole($role);
         }
     }

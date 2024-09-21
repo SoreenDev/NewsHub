@@ -13,16 +13,8 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        /*
-            defaults roles
-
-            guardName 'admin' for AdminDashboard
-            guardName 'journalist' for JournalistDashboard
-            guardName 'user' for App
-        */
-
-        Role::findOrCreate('manager','admin');
-        Role::findOrCreate('leader','Journalist');
-        Role::findOrCreate('member','user');
+        Role::findOrCreate('Admin_manager','web');
+        Role::findOrCreate('Journalist_manager','web');
+        Role::findOrCreate('Member','web');
     }
 }
